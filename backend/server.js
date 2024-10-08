@@ -1,20 +1,21 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import authRoutes from './routes/auth.route.js';
 import connectToMongoDB from './db/connect.js';
-dotenv.config();
+import cookieParser from 'cookie-parser';
 
+import authRoutes from './routes/auth.route.js';
+import messageRoutes from './routes/message.route.js';
+
+
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
-
-// app.get('/',(req, res)=>{
-//     res.end("<h1>Hi</h1>")
-// })
-
+app.use("/api/messages",messageRoutes);
 
 app.listen(PORT,()=>{
     connectToMongoDB();
