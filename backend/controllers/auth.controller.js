@@ -14,7 +14,7 @@ export const signup = async (req, res) =>{
         // Check for existing User
         const user = await User.findOne({username});
         if(user){
-            return res.status(400).json({error: "username laready exists"})
+            return res.status(400).json({error: "username already exists"})
         }
 
         // Password Hashed here
