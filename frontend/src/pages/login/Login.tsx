@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Login = () => {
     return (
         <div className="loginArea">
@@ -20,7 +22,7 @@ const Login = () => {
                         <button className="btn">Login</button>
                     </div>
                     <div>
-                        <a href="#" className="link">Don't have an account ?</a>
+                        <Link to={"/signup"} className="link">Don't have an account ?</Link>
                     </div>
                 </form>
             </div>

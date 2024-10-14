@@ -168,6 +168,40 @@ body{
     box-sizing: border-box;
 }
 
+.centreContent{
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.MessageGreet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    gap: 10px;
+    font-size: 2rem;
+}
+
+.todoMessage{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoMessage .brand{
+    font-size: 1.5rem;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5);
+}
+
+.appIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .messageArea .messageHeader{
     display: flex;
     /* height: 10%; */
@@ -176,6 +210,7 @@ body{
     box-sizing: border-box;
     padding: 0 0.5rem;  
 }
+
 
 .messageArea .messageBox{
     display: flex;
@@ -241,7 +276,7 @@ body{
 
 .message-sent{
     align-self: flex-end;
-    background-color: rgba(172, 180, 253, 0.4);
+    background-color: rgba(255, 0, 221, 0.4);
     /* border: 1px solid rgba(203, 172, 253, 0.4); */
     border-radius: 13px 0 13px 13px;
     position: relative;
@@ -255,14 +290,14 @@ body{
     right: -10px;
     width: 0;
     height: 0;
-    border-left: 10px solid rgba(203, 172, 253, 0.4);
-    border-top: 1px solid rgba(203, 172, 253, 0.4);
+    border-left: 10px solid rgba(255, 0, 221, 0.4);;
+    border-top: 1px solid rgba(255, 0, 221, 0.4);;
     border-bottom: 10px solid transparent;
 }
 
 .message-recieved{
     align-self: flex-start;
-    background-color: rgba(203, 172, 253, 0.4);
+    background-color: rgba(0, 60, 255, 0.4);
     /* border: 1px solid rgba(172, 180, 253, 0.4); */
     border-radius: 0 13px 13px 13px;
     position: relative;
@@ -276,8 +311,8 @@ body{
     left: -10px;
     width: 0;
     height: 0;
-    border-right: 10px solid rgba(203, 172, 253, 0.4);
-    border-top: 1px solid rgba(203, 172, 253, 0.4);
+    border-right: 10px solid rgba(0, 60, 255, 0.4);
+    border-top: 1px solid rgba(0, 60, 255, 0.4);
     border-bottom: 10px solid transparent;
 }
 
@@ -439,6 +474,9 @@ body{
     align-items: center;
     height: 100%;
     cursor: pointer;
+    position: absolute;
+    bottom: -45%;
+    left: 10px;
 }
 
 .logButton{

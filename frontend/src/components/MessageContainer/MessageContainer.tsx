@@ -2,7 +2,7 @@ import Conversation from "../Conversations/Conversation/Conversation";
 import MessageInput from "../MessageInput/MessageInput";
 import Messages from "../Messages/Messages";
 
-const MessageContainer = () => {
+export const MessageContainer = () => {
     return (
         <div className="messageArea">
             <div className="messageHeader">
@@ -14,4 +14,12 @@ const MessageContainer = () => {
     )
 }
 
-export default MessageContainer;
+export const DefaultMessageScreen = () => {
+    return (
+        <div className="messageArea centreContent">
+            <div className="MessageGreet">Welcome 👋 Raunak !</div>
+            <div className="todoMessage">Select a chat to start messaging on <div className="brand">ChatNet</div></div>
+            <div className="appIcon"><img src="/designicon/chatNet64x64.png" alt="" /></div>
+        </div>
+    )
+};

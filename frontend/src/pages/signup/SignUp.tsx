@@ -1,21 +1,45 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import useSignUp from "../../hooks/SignUpHook";
+import toast from "react-hot-toast";
+
 const SignUp = () => {
+    const [inputs, setInputs] = useState({
+        fullName: '',
+        username: '',
+        password: '',
+        confirmPassword: '',
+        gender: ''
+    });
+
+    const {loading, signUp} = useSignUp();
+
+    const changeHandler = (e) => {
+        setInputs({...inputs, [e.target.name]: e.target.value});
+    }
+
+    const handleSubmit =  async (e) => {
+        e.preventDefault();
+        await signUp(inputs);
+    }
+
     return (
         <div className="loginArea">
             <div className="loginBox">
                 <div className="headText">Sign Up <span className="brand">ChatNet</span></div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label className="label">
                             Full Name
                         </label>
-                        <input type="text" placeholder="Enter Full Name" className="inputForm" />
+                        <input name="fullName" type="text" placeholder="Enter Full Name" className="inputForm" value={inputs.fullName} onChange={changeHandler} />
                     </div>
                     <div>
                         <label className="label">
                             Gender
                         </label>
-                        <select value="Nonez" className="inputForm">
-                            <option value="None">Select Gender</option>
+                        <select name="gender" value={inputs.gender} className="inputForm" onChange={changeHandler}>
+                            <option value="">Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
@@ -24,25 +48,25 @@ const SignUp = () => {
                         <label className="label">
                             Username
                         </label>
-                        <input type="text" placeholder="Enter Username" className="inputForm" />
+                        <input name="username" type="text" placeholder="Enter Username" className="inputForm" value={inputs.username} onChange={changeHandler} />
                     </div>
                     <div>
                         <label className="label">
                             Password
                         </label>
-                        <input type="password" placeholder="Enter Password" className="inputForm" />
+                        <input name="password" type="password" placeholder="Enter Password" className="inputForm" value={inputs.password} onChange={changeHandler} />
                     </div>
                     <div>
                         <label className="label">
                             Confirm Password
                         </label>
-                        <input type="password" placeholder="Enter Same Password" className="inputForm" />
+                        <input name="confirmPassword" type="password" placeholder="Enter Same Password" className="inputForm" value={inputs.confirmPassword} onChange={changeHandler} />
                     </div>
                     <div>
                         <button className="btn">Sign Up</button>
                     </div>
                     <div>
-                        <a href="#" className="link">Already have an account ?</a>
+                        <Link to={"/login"} className="link">Already have an account ?</Link>
                     </div>
                 </form>
             </div>

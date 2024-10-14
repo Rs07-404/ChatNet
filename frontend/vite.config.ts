@@ -12,7 +12,7 @@ export default defineConfig({
         "name": "ChatNet",
         "short_name": "ChatNet",
         "description": "ChatNet is a web application that connects people through chat",
-        "start_url": "/index.html",
+        "start_url": "/",
         "display": "standalone",
         "background_color": "#000000",
         "theme_color": "#000000",
@@ -60,13 +60,13 @@ export default defineConfig({
     },
     })
   ],
-  // server: {
-  //   host: '0.0.0.0',
-  //   port: 443,
-  //   https: {
-  //     key: fs.readFileSync('192.168.6.90-key.pem'),
-  //     cert: fs.readFileSync('192.168.6.90.pem'),
-  //   }
-  // }
+  server:{
+    port: 3000,
+    proxy: {
+        '/api':{
+            target: 'http://localhost:5000'
+        },
+    },
+  },
 })
 

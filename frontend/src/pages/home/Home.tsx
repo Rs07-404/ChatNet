@@ -1,11 +1,12 @@
-import MessageContainer from '../../components/MessageContainer/MessageContainer.tsx';
+import {MessageContainer, DefaultMessageScreen} from '../../components/MessageContainer/MessageContainer.tsx';
 import SideBar from '../../components/SideBar/SideBar.tsx';
 
 const Home = () => {
+    let noChatSelected = true
     return (
         <div className="chatBox">
             <SideBar />
-            <MessageContainer />
+            {(noChatSelected)?<DefaultMessageScreen />:<MessageContainer />}
         </div>
     );
 }
