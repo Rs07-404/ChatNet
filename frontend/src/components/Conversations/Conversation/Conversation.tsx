@@ -7,7 +7,6 @@ const Conversation = () => {
                 <UserAvatar />
                 <div className="nameArea">Raunak Shah</div>
         </div>
-        <div className="divider" />
         </>
     )
 }

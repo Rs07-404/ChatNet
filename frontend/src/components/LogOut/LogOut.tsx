@@ -3,7 +3,7 @@ import { BiLogOut } from "react-icons/bi";
 const LogOut = () => {
     return (
         <div className="logoutArea">
-            <BiLogOut className="logButton" /> Logout
+            <div className="logOutButtonArea"><BiLogOut className="logButton" /> Logout</div>
         </div>
     );
 }
