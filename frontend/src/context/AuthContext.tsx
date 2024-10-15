@@ -1,19 +1,23 @@
-import { createContext, Dispatch, SetStateAction, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { User } from "../types/User.type.ts";
+import { AuthContextType } from "../types/AuthContext.type.ts";
 
-type AuthContextType = {
-    authUser: User | null;
-    setAuthUser: Dispatch<SetStateAction<User | null>>;
+
+export const useAuthContext = () => {
+    const context = useContext(AuthContext);
+    if(!context){
+        throw new Error("useAuthContext must be used within an AuthContextProvider");
+    }
+    return context;
 }
-
-
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthContextProvider = ({ children }) => {
-    const [authUser, setAuthUser] = useState(JSON.parse(localStorage.getItem("chat-user")) || null);
+    const storedUser = localStorage.getItem("chat-user");
+    const [authUser, setAuthUser] = useState<User |  null>(storedUser ? JSON.parse(storedUser) : null);
 
 
 
-    return <AuthContext.Provider value={{authUser, setAuthUser}}>{children}</AuthContext.Provider>;
+    return <AuthContext.Provider value={{ authUser, setAuthUser }}>{children}</AuthContext.Provider>;
 }
