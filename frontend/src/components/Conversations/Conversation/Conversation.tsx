@@ -1,11 +1,11 @@
 import UserAvatar from "./Avatar";
 
-const Conversation = () => {
+const Conversation = ({contact}) => {
     return (
         <>
         <div className="conversation">
-                <UserAvatar />
-                <div className="nameArea">Raunak Shah</div>
+                <UserAvatar name={contact.fullName} profilepic={contact.profilePic} />
+                <div className="nameArea">{contact.fullName}</div>
         </div>
         </>
     )
