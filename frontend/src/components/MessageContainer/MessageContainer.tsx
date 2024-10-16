@@ -1,25 +1,20 @@
-import Conversation from "../Conversations/Conversation/Conversation";
+import useConversation from "../../zustand/useConversation";
+import UserAvatar from "../Conversations/Conversation/Avatar";
 import MessageInput from "../MessageInput/MessageInput";
 import Messages from "../Messages/Messages";
+import DefaultMessageScreen from "./DefaultMessageScreen";
 
 export const MessageContainer = () => {
-    return (
-        <div className="messageArea">
-            <div className="messageHeader">
-                <Conversation />
+    const {selectedConversation, setSelectedConversation} = useConversation();
+        
+       return (selectedConversation ? <div className="messageArea">
+        <div className="messageHeader">
+            <div className="conversation">
+                <UserAvatar name={selectedConversation.fullName} profilepic={selectedConversation.profilePic} />
+                <div className="nameArea">{selectedConversation.fullName}</div>
+        </div>
             </div>
             <Messages />
             <MessageInput />
-        </div>
-    )
+        </div> : <DefaultMessageScreen /> )
 }
-
-export const DefaultMessageScreen = () => {
-    return (
-        <div className="messageArea centreContent">
-            <div className="MessageGreet">Welcome 👋 Raunak !</div>
-            <div className="todoMessage">Select a chat to start messaging on <div className="brand">ChatNet</div></div>
-            <div className="appIcon"><img src="/designicon/chatNet64x64.png" alt="" /></div>
-        </div>
-    )
-};

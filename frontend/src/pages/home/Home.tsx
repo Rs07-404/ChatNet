@@ -2,11 +2,10 @@ import {MessageContainer, DefaultMessageScreen} from '../../components/MessageCo
 import SideBar from '../../components/SideBar/SideBar.tsx';
 
 const Home = () => {
-    let noChatSelected = true
     return (
         <div className="chatBox">
             <SideBar />
-            {(noChatSelected)?<DefaultMessageScreen />:<MessageContainer />}
+            <MessageContainer />
         </div>
     );
 }

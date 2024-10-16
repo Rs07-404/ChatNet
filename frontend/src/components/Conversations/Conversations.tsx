@@ -5,12 +5,11 @@ const Conversations = () => {;
     const { loading, contacts } = useGetConversations();
     return (
         <div className="conversation_list">
-            {contacts ? (contacts.map((contact, index) => {
+            {(contacts.map((contact) => {
                 // let lastIdx = index === contacts.length - 1;
                 return (<><Conversation key={contact._id} contact={contact} /></>)
-            })): <div className="startConversationBox"><div className="addNewConversationButton">➕</div></div>
-            }
-            {loading ? "Loading...." : null}
+            }))}
+            {loading ? "Loading...." : !(contacts.length > 0) ? <div className="startConversationBox"><div className="addNewConversationButton">➕</div><div className="todoMessage">Create a Conversation and start chatting</div></div> : ""}
         </div>
     );
 }
