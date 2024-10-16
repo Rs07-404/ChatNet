@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useSignUp from "../../hooks/SignUpHook";
-import toast from "react-hot-toast";
 
 const SignUp = () => {
     const [inputs, setInputs] = useState({
