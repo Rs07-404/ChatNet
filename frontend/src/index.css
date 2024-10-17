@@ -205,13 +205,25 @@ body{
 
 .messageArea .messageHeader{
     display: flex;
+    justify-content: center;
+    align-items: center;
     /* height: 10%; */
     flex: 10%;
     background-color: rgba(255, 255, 255, 0.1);
     box-sizing: border-box;
-    padding: 0 0.5rem;  
+    padding: 0 0.5rem;
 }
 
+.messageHeader .conversation{
+    display: inline-flex;
+    flex: 40%;
+    height: max-content;
+    margin: 0;
+}
+
+.messageHeader .conversation:hover{
+    background-color: rgba(255, 255, 255, 0);
+}
 
 .messageArea .messageBox{
     display: flex;
@@ -236,15 +248,22 @@ body{
     box-sizing: border-box;
 }
 
-.messageInput .inputForm{
+.messageInputArea{
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.messageInputArea .inputForm{
     flex: 90%;
     height: 100%;
     margin: 0;
 }
 
+
 .message-send-button{
-    fill: rgba(172, 180, 253, 0.4);
-    stroke: white;
+    fill: rgba(0, 0, 0, 0.5);
+    stroke: rgba(0, 0, 0, 0.9);
     stroke-width: 10px;
     width: 1.5rem;
     height: 1.5rem;
@@ -258,7 +277,7 @@ body{
 }
 
 .message-send-button:active{
-    fill: rgba(172, 180, 253, 0.774);
+    fill: rgba(0, 0, 0, 0.9);
     transform: scale(0.9);
 }
 
@@ -406,12 +425,13 @@ body{
     border-radius: 0.25rem;
     padding: 0.8rem;
     cursor: pointer;
-    margin-right: 0.5rem;
+    /* margin-right: 0.5rem; */
     transition: all 0.5s;
 }
 
 .selected{
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0;
 }
 
 .conversation:hover{

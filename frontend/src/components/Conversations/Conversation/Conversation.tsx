@@ -7,7 +7,7 @@ const Conversation = ({contact}) => {
     return (
         <>
         <div className={isSelected ? "conversation selected" : "conversation"} onClick={()=>{setSelectedConversation(contact)}}>
-                <UserAvatar name={contact.fullName} profilepic={contact.profilePic} />
+                <UserAvatar name={contact.fullName} profilepic={contact.profilePic} size={32} />
                 <div className="nameArea">{contact.fullName}</div>
         </div>
         </>

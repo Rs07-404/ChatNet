@@ -4,9 +4,9 @@ import { Message } from "../types/Message.type";
 
 interface ConversationStore{
     selectedConversation: User | null,
-    setSelectedConversation: (selectedConversation: User)=> void,
-    messages: Message[],
-    setMessages: (messages: Message[])=> void,
+    setSelectedConversation: (selectedConversation: User | null)=> void,
+    messages: Message[] | [],
+    setMessages: (messages: Message[] | [])=> void,
 }
 
 const useConversation = create<ConversationStore>((set) => ({
