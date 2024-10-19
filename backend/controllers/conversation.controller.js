@@ -1,5 +1,7 @@
 import Conversation from "../models/conversation.model.js";
 import User from "../models/user.model.js";
+import { getReceiverSocketId } from "../socket/socket.js";
+import { io } from "../socket/socket.js";
 
 export const createConversation = async (req, res) => {
     try{
@@ -11,6 +13,8 @@ export const createConversation = async (req, res) => {
                 participants: { $all: [senderId, user._id] }
             });
             if(!conversation){
+
+                // create new conversation
                 let newConversation = await Conversation.create({
                     participants: [senderId, user._id],
                 })
@@ -18,10 +22,13 @@ export const createConversation = async (req, res) => {
                     throw new Error("Failed to create Conversation");
                 }
                 await newConversation.save();
-                res.status(201).json({
-                    _id: newConversation._id,
-                    userId: user._id,
-                })
+
+                // notify user
+                const receiverSocketId = await getReceiverSocketId(user._id);
+                if(receiverSocketId){
+                    io.to(receiverSocketId).emit("newConversation",req.user);
+                }
+                res.status(201).json(user);
             }else{
                 res.status(400).json({ error: "Conversation already exists" })
             }

@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useAuthContext } from "./AuthContext";
 import io, { Socket } from "socket.io-client";
-
+import newConversationSound from "../assets/sounds/newConversation.mp3";
+import useConversation from "../zustand/useConversation";
 
 export const useSocketContext = () => {
     const context = useContext(SocketContext);
@@ -17,6 +18,8 @@ export const SocketContextProvider = ({children}) => {
     const [socket, setSoket] = useState<Socket | null>(null);
     const [onlineusers, setOnlineUsers] = useState([]);
     const { authUser } = useAuthContext();
+    const { setConversations } = useConversation();
+    const notification = new Audio(newConversationSound);
 
     useEffect(()=>{
         if(authUser){
@@ -30,6 +33,12 @@ export const SocketContextProvider = ({children}) => {
             socket.on("getOnlineUsers", (users)=>{
                 setOnlineUsers(users);
             })
+
+            socket.on("newConversation",(newConversation)=>{
+                notification.play();
+                const existingConversations = useConversation.getState().conversations;
+                setConversations([...existingConversations, newConversation]);
+            });
 
             return ()=>{
                 socket.close();
