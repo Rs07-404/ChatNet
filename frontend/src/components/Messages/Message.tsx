@@ -1,14 +1,20 @@
-import { useAuthContext } from "../../context/AuthContext";
 import useConversation from "../../zustand/useConversation";
 
+const extractTime = (dateString):String => {
+    const date = new Date(dateString);
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+
+    return `${hours}:${minutes}`;
+}
+
 const Message = ({message}) => {
-    const { authUser } = useAuthContext();
     const { selectedConversation } = useConversation();
     const isMessageReceived = (message.senderId === selectedConversation?._id);
+    const className = isMessageReceived ? "message message-recieved" : "message message-sent";
+    const time = extractTime(message.createdAt);
     return(
-        isMessageReceived?
-        <div className="message message-recieved"><div className="messageContent">{message.message}</div><div className="messageTime">15:30</div></div>
-        :<div className="message message-sent"><div className="messageContent">{message.message}</div><div className="messageTime">15:30</div></div>
+        <div className={ className }><div className="messageContent">{message.message}</div><div className="messageTime">{time}</div></div>
     )
 }
 

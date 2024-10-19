@@ -31,14 +31,15 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-export default function UserAvatar({name, profilepic, size}) {
+export default function UserAvatar({name, profilepic, size, isOnline}) {
   return (
+    isOnline?
       <StyledBadge
         overlap="circular"
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         variant="dot"
       >
         <Avatar sx={{ width: size, height: size }} alt={name} src={profilepic} />
-      </StyledBadge>
+      </StyledBadge>:<Avatar sx={{ width: size, height: size }} alt={name} src={profilepic} />
   );
 }
