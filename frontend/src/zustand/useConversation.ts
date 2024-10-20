@@ -13,7 +13,7 @@ interface ConversationStore{
     setMessages: (messages: Message[] | [])=> void,
 }
 
-const useConversation = create<ConversationStore>((set, get) => ({
+const useConversation = create<ConversationStore>((set) => ({
     conversations: [],
     setConversations: (conversations) => set({conversations}),
     filteredConversations: [],

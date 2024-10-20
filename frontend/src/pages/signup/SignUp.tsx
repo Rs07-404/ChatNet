@@ -62,7 +62,7 @@ const SignUp = () => {
                         <input name="confirmPassword" type="password" placeholder="Enter Same Password" className="inputForm" value={inputs.confirmPassword} onChange={changeHandler} />
                     </div>
                     <div>
-                        <button className="btn">Sign Up</button>
+                        <button className="btn">{loading? "loading...":"Sign Up"}</button>
                     </div>
                     <div>
                         <Link to={"/login"} className="link">Already have an account ?</Link>

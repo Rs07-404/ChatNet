@@ -5,7 +5,7 @@ import useConversation from "../zustand/useConversation";
 const useGetConversations = () => {
     const [loading, setLoading] = useState(false);
     // const [contacts, setContacts] = useState<User[] | []>([]);
-    const { conversations, setConversations } = useConversation();
+    const { setConversations } = useConversation();
 
     useEffect(()=>{
         const getConversations = async () => {
