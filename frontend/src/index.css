@@ -5,7 +5,7 @@
 body{
     padding: 0;
     margin: 0;
-    background-image: linear-gradient(135deg, #452e2e79 0%, #062a4779 50%, #101e1d79 100%), url('bg.jpg');
+    background-image: linear-gradient(135deg, #452e2e79 0%, #062a4779 50%, #101e1d79 100%), url('./assets/backgrounds/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -598,19 +598,19 @@ body{
 /* Media Query for Background*/
 @media (max-width: 1920px) {
     body{
-        background-image: linear-gradient(135deg, #452e2e79 0%, #062a4779 50%, #101e1d79 100%), url('bg_large.jpg');
+        background-image: linear-gradient(135deg, #452e2e79 0%, #062a4779 50%, #101e1d79 100%), url('./assets/backgrounds/bg_large.jpg');
     }
 }
 
 @media (max-width: 1280px) {
     body{
-        background-image: linear-gradient(135deg, #452e2e79 0%, #062a4779 50%, #101e1d79 100%), url('bg_medium.jpg');
+        background-image: linear-gradient(135deg, #452e2e79 0%, #062a4779 50%, #101e1d79 100%), url('./assets/backgrounds/bg_medium.jpg');
     }
 }
 
 @media (max-width: 850px){
     body{
-        background-image: linear-gradient(135deg, #452e2e79 0%, #062a4779 50%, #101e1d79 100%), url('bg_small.jpg');
+        background-image: linear-gradient(135deg, #452e2e79 0%, #062a4779 50%, #101e1d79 100%), url('./assets/backgrounds/bg_small.jpg');
         box-sizing: border-box;
     }
     .app{
