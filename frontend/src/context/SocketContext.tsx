@@ -23,7 +23,7 @@ export const SocketContextProvider = ({children}) => {
 
     useEffect(()=>{
         if(authUser){
-            const socket = io(process.env.client,{
+            const socket = io("https://chatnet-fusd.onrender.com",{
                 query: {
                     userId: authUser._id,
                 }
