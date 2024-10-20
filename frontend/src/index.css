@@ -323,6 +323,7 @@ body{
     padding: 0.5rem;
     margin: 0.5rem;
     color: rgba(255, 255, 255, 0.8);
+    overflow: auto;
     cursor: default;
     transition: all 1s;
 }
