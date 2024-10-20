@@ -344,18 +344,6 @@ body{
     margin-right: 11px;
 }
 
-.message-sent::after{
-    content: '';
-    position: absolute;
-    top: 0px;
-    right: -10px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid rgba(255, 0, 221, 0.4);;
-    border-top: 1px solid rgba(255, 0, 221, 0.4);;
-    border-bottom: 10px solid transparent;
-}
-
 .message-recieved{
     align-self: flex-start;
     background-color: rgba(0, 60, 255, 0.4);
@@ -363,18 +351,6 @@ body{
     border-radius: 0 13px 13px 13px;
     position: relative;
     margin-left: 20px;
-}
-
-.message-recieved::after{
-    content: '';
-    position: absolute;
-    top: 0px;
-    left: -10px;
-    width: 0;
-    height: 0;
-    border-right: 10px solid rgba(0, 60, 255, 0.4);
-    border-top: 1px solid rgba(0, 60, 255, 0.4);
-    border-bottom: 10px solid transparent;
 }
 
 .messageTime{
@@ -493,6 +469,7 @@ body{
 
 *::-webkit-scrollbar{
     width: 0.5rem;
+    height: 4px;
 }
 
 *::-webkit-scrollbar-track{
