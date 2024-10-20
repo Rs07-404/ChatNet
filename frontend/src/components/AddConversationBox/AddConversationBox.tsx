@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useCreateConversation } from "../../hooks/useCreateConversation";
 import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";

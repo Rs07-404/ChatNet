@@ -1,6 +1,8 @@
-import React, { createContext, ReactNode, SetStateAction, useContext, useState } from "react";
+import React, { createContext, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
 
 export const AppContext = createContext<{
+    screenWidth: number,
+    setScreenWidth: React.Dispatch<SetStateAction<number>>,
     showAddConversationBox: boolean | null,
     setShowAddConversationBox: React.Dispatch<SetStateAction<boolean>>;
 } | undefined>(undefined );
@@ -15,8 +17,24 @@ export const useAppContext = () => {
 
 export const AppContextProvider = ({children}: {children: ReactNode}) => {
     const [ showAddConversationBox, setShowAddConversationBox ] = useState<boolean>(false);
+    const [ screenWidth, setScreenWidth ] = useState<number>(window.innerWidth);
+    
+
+    useEffect(()=>{
+        const updateWidth = () => {
+            setScreenWidth(window.innerWidth);
+        }
+        updateWidth();
+
+        window.addEventListener('resize', updateWidth);
+
+        return () => {
+            window.removeEventListener('resize', updateWidth);
+        };
+    }, [])
+
     return (
-        <AppContext.Provider value={{ showAddConversationBox, setShowAddConversationBox }}>
+        <AppContext.Provider value={{ screenWidth, setScreenWidth, showAddConversationBox, setShowAddConversationBox }}>
             {children}
         </AppContext.Provider>
     )

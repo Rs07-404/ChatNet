@@ -7,6 +7,8 @@ const Conversation = ({contact}) => {
     const isSelected = selectedConversation?._id === contact._id;
     const { onlineusers } = useSocketContext();
     const isOnline = onlineusers.includes(contact._id);
+
+
     return (
         <>
         <div className={isSelected ? "conversation selected" : "conversation"} onClick={()=>{setSelectedConversation(contact)}}>

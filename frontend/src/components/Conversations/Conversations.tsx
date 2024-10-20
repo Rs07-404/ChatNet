@@ -5,7 +5,7 @@ import Conversation from "./Conversation/Conversation";
 
 const Conversations = () => {;
     const { loading } = useGetConversations();
-    const { conversations, filteredConversations } = useConversation();
+    const { conversations, filteredConversations} = useConversation();
     const { setShowAddConversationBox } = useAppContext();
     return (
         <div className="conversation_list">

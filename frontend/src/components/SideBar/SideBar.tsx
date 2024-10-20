@@ -9,7 +9,7 @@ const SideBar = () => {
         <div className="sideBar">
             <SearchInput />
             <div className="divider"></div>
-            <Conversations key={authUser?._id} />
+            <Conversations key={authUser? String(authUser._id): "000"} />
             <LogOut />
         </div>
     )

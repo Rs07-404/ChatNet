@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const MessageInput = () => {
     const [inputMessage, setInputMessage] = useState("");
-    const { sendMessage, loading } = useSendMessage()
+    const { sendMessage } = useSendMessage()
     const handleChange = (e) => {
         setInputMessage(e.target.value);
     }
