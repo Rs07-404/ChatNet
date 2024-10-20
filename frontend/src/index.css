@@ -320,11 +320,11 @@ body{
     display: flex;
     flex-direction: column;
     max-width: 40vw;
-    max-height: 50%;
+    max-height: 50vh;
     padding: 0.5rem;
     margin: 0.5rem;
     color: rgba(255, 255, 255, 0.8);
-    /* overflow: auto; */
+    overflow: auto;
     cursor: default;
     transition: all 1s;
 }
