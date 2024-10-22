@@ -15,4 +15,4 @@ To get started with ChatNet, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/YourUsername/chatNet.git
+   git clone https://github.com/rs-07.404/chatNet.git
