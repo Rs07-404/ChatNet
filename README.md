@@ -15,3 +15,6 @@ Welcome to **ChatNet** - a chat application designed to meet the growing demand 
 ## Links:
 -	**Github**: https://github.com/Rs07-404/ChatNet
 -	**Hosted-App**: https://chatnet-fusd.onrender.com (This app is hosted using a free service offered by render.com. The site may take time to reach (40 – 50 seconds after you visit) as the server goes down if inactivity is experienced on deployed server and takes little time to start the service when user visits.)
+
+
+**Logo Attributio**: <a href="https://www.flaticon.com/free-icons/message" title="message icons">Message icons created by Freepik - Flaticon</a>
