@@ -12,10 +12,6 @@ Welcome to **ChatNet** - a chat application designed to meet the growing demand 
 - **Notifications**: Stay updated with notifications for new messages and activities.
 - **Responsive Design**: Enjoy a smooth experience across devices, whether on desktop or mobile.
 
-## Installation
-
-To get started with ChatNet, follow these steps:
-
-1. **Links**:
+## Links:
 -	**Github**: https://github.com/Rs07-404/ChatNet
 -	**Hosted-App**: https://chatnet-fusd.onrender.com (This app is hosted using a free service offered by render.com. The site may take time to reach (40 – 50 seconds after you visit) as the server goes down if inactivity is experienced on deployed server and takes little time to start the service when user visits.)
