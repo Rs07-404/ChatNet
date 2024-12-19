@@ -20,10 +20,10 @@ export const SocketContextProvider = ({children}) => {
     const { authUser } = useAuthContext();
     const { setConversations } = useConversation();
     const notification = new Audio(newConversationSound);
-
+    // "https://chatnet-fusd.onrender.com"
     useEffect(()=>{
         if(authUser){
-            const socket = io("https://chatnet-fusd.onrender.com",{
+            const socket = io(process.env.server,{
                 query: {
                     userId: authUser._id,
                 }

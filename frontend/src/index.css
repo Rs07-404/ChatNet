@@ -329,10 +329,21 @@ body{
     transition: all 1s;
 }
 
+.message a{
+    display: inline;
+    display: flex;
+}
+
 .messageContent{
     display: flex;
-    width: 100%;
+    min-width: 0%;
+    max-width: 100%;
+    height: max-content;
     overflow: auto;
+}
+
+.messageContent a{
+    color: #00aeff;
 }
 
 .message-sent{

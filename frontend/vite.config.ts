@@ -5,6 +5,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    build: {
+      },
   plugins: [
     react(),
     VitePWA({
@@ -56,7 +58,7 @@ export default defineConfig({
         ]
     },
     workbox:{
-
+        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024, // Set limit to 4 MB
     },
     })
   ],
@@ -64,7 +66,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
         '/api':{
-            target: 'http://localhost:5000'
+            target: process.env.server
         },
     },
   },

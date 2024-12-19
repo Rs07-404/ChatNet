@@ -8,8 +8,9 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://chatnet-fusd.onrender.com",
+        origin: process.env.client,
         methods: ['GET', 'POST'],
+        allowedHeaders: ['Content-Type'],
     }
 });
 
