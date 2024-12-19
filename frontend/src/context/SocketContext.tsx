@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useAuthContext } from "./AuthContext";
 import io, { Socket } from "socket.io-client";
-import newConversationSound from "../newConversation.mp3";
+import newConversationSound from "../assets/sounds/newConversation.mp3";
 import useConversation from "../zustand/useConversation";
 
 export const useSocketContext = () => {
