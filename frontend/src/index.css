@@ -329,10 +329,10 @@ body{
     transition: all 1s;
 }
 
-.message a{
+/* .message a{
     display: inline;
     display: flex;
-}
+} */
 
 .messageContent{
     display: flex;
@@ -340,10 +340,17 @@ body{
     max-width: 100%;
     height: max-content;
     overflow: auto;
+    word-wrap: break-word;
+    white-space: normal;
+
 }
 
 .messageContent a{
     color: #00aeff;
+    /* display: flex;
+    word-wrap: break-word;
+    white-space: normal; */
+
 }
 
 .message-sent{
