@@ -211,6 +211,7 @@ a{
         justify-content: center;
         align-items: center;
         animation: popout 0.1s linear;
+        z-index: 100;
     }
 
 
