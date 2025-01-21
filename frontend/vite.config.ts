@@ -6,6 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 // https://vitejs.dev/config/
 export default defineConfig({
     build: {
+        outDir: 'dist',
       },
   plugins: [
     react(),
@@ -66,7 +67,8 @@ export default defineConfig({
     port: 3000,
     proxy: {
         '/api':{
-            target: "http://localhost:5000"
+            target: "https://chat-net-backend.vercel.app",
+            changeOrigin: true,
         },
     },
   },
