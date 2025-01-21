@@ -16,13 +16,6 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-// app.use(cors(
-//     {
-//         origin: process.env.client,
-//         methods: ['GET', 'POST'],
-//         allowedHeaders: ['Content-Type'],
-//     }
-// ))
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
