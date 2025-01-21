@@ -29,6 +29,10 @@ app.use("/api/conversation", conversationRoutes);
 // });
 
 
+app.get("/", (req, res)=>{
+    res.json("Server Started");
+})
+
 server.listen(PORT,()=>{
     connectToMongoDB();
     console.log(`Listening on ${PORT}.`)
