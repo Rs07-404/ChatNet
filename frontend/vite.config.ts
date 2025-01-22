@@ -67,7 +67,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
         '/api':{
-            target: "https://chatnet-fusd.onrender.com/",
+            target: "https://chatnet-fusd.onrender.com",
             changeOrigin: true,
         },
     },
