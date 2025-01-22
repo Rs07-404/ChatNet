@@ -23,7 +23,7 @@ export const SocketContextProvider = ({children}) => {
     // "https://chatnet-fusd.onrender.com"
     useEffect(()=>{
         if(authUser){
-            const socket = io("https://chat-net-backend.vercel.app",{
+            const socket = io(process.env.server,{
                 query: {
                     userId: authUser._id,
                 }
